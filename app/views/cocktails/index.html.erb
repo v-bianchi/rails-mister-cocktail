@@ -1,9 +1,21 @@
-<h1>Cocktails index</h1>
+<div class="container">
+  <h1>Mister Cocktail</h1>
 
-<%= link_to "Add cocktail", new_cocktail_path %>
+  <%= link_to "Add cocktail", new_cocktail_path %>
 
-<ul>
-  <% @cocktails.each do |elt| %>
-    <li><%= link_to elt.name, cocktail_path(elt) %></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @cocktails.each do |elt| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+          <div class="card-description">
+            <h2><%= elt.name %></h2>
+          </div>
+          <%= link_to cocktail_path(elt) do %>
+            <div class="card-link"></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
