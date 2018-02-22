@@ -1,9 +1,15 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
 
-  <ul>
+  <ul class="list-group">
     <% @cocktail.doses.each do |elt| %>
-      <li><%= elt.description %> <%= elt.ingredient.name %></li>
+      <li class="list-group-item">
+        <%= link_to dose_path(elt.id), method: "delete" do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+        <%= elt.description %>
+        <%= elt.ingredient.name %>
+      </li>
     <% end %>
   </ul>
 
