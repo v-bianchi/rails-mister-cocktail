@@ -1,12 +1,17 @@
-<div class="container">
-  <h1>Mister Cocktail</h1>
+<div class="banner pos-bottom" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "kaizen-nguy-n-274069-unsplash" %>')">
+  <h1>Cocktail fun!</h1>
+</div>
+
+
+<div class="container padded-top">
+
 
   <%= link_to "Add cocktail", new_cocktail_path %>
 
   <div class="row">
     <% @cocktails.each do |elt| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path elt.photo %>')">
           <div class="card-description">
             <h2><%= elt.name %></h2>
           </div>

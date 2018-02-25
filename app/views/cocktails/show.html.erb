@@ -1,5 +1,9 @@
-<div class="container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cocktail.photo %>')">
   <h1><%= @cocktail.name %></h1>
+</div>
+
+<div class="container padded-top">
+
 
   <ul class="list-group">
     <% @cocktail.doses.each do |elt| %>
@@ -14,6 +18,7 @@
   </ul>
 
   <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail) %>
+  <br>
   <%= link_to "Back", cocktails_path %>
 </div>
 
